@@ -1,4 +1,5 @@
 body {
+<<<<<<< HEAD
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -9,3 +10,45 @@ body {
 h1 {
     color: #333;
 }
+=======
+
+display: flex;
+flex-direction: column;
+align-items: center;
+height: 100vh;
+margin: 0;
+font-family: 'Times New Roman', Times, serif;
+background-color: rgb(212, 221, 221);
+}
+ header {
+width: 100%;
+text-align: center;
+margin-top: 80px;
+margin-bottom: 0;
+ }
+ h3 {
+    margin: 0;
+ }
+ main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    
+ }
+.form-container {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    width: 10%;
+}
+ form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+
+ 
+>>>>>>> source/main
