@@ -39,11 +39,9 @@ To install and set up the project locally, follow these steps:
 
 1. Clone the repository from GitHub:
    ```bash
-   git clone https://github.com/your-username/school-management-system.git
-   cd school-management-system
 Set up the database:
 
-Create a MySQL database named school_management.
+Create a MySQL database 
 
 Import the database.sql file into the school_management database.
 
@@ -69,6 +67,7 @@ Melody - Melodykariuki
 
 Francis - wales31
 
+James - Mahia-James
 
 
 License
