@@ -11,17 +11,6 @@ if (!isset($_SESSION["user_id"]) || $_SESSION["role"] != "teacher") {
 include("db.php");
 
 $teacher_id = $_SESSION["user_id"];
-$sql = "SELECT id, student_name, email, class, grade_level, dob, parent_contact_info 
-        FROM students WHERE added_by = ? AND is_deleted = 0";
-
-if ($stmt = $conn->prepare($sql)) {
-    $stmt->bind_param("i", $teacher_id);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $stmt->close();
-} else {
-    die("❌ SQL Error: " . $conn->error);
-}
 
 $conn->close();
 ?>
@@ -74,7 +63,6 @@ $conn->close();
 <body>
     <div class="navbar">
         <a href="teacher_dashboard.php">🏠 Home</a>
-        <a href="manage_students.php">Manage Students</a>
         <a href="mark_attendance.php">Mark Attendance</a>
         <a href="enter_grades.php">Enter Grades</a>
         <a href="view_grades.php">View Grades</a>
@@ -84,39 +72,6 @@ $conn->close();
     <div class="container">
         <h2>Welcome, Teacher!</h2>
         <p>Manage your students and classes here.</p>
-
-        <h3>Your Students</h3>
-        <table class="table table-bordered">
-            <thead class="table-dark">
-                <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Class</th>
-                    <th>Grade Level</th>
-                    <th>Date of Birth</th>
-                    <th>Parent Contact Info</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php while ($row = $result->fetch_assoc()) : ?>
-                    <tr>
-                        <td><?= htmlspecialchars($row['student_name']) ?></td>
-                        <td><?= htmlspecialchars($row['email']) ?></td>
-                        <td><?= htmlspecialchars($row['class']) ?></td>
-                        <td><?= htmlspecialchars($row['grade_level']) ?></td>
-                        <td><?= htmlspecialchars($row['dob']) ?></td>
-                        <td><?= htmlspecialchars($row['parent_contact_info']) ?></td>
-                        <td>
-                            <a href="edit_student.php?id=<?= $row['id'] ?>" class="btn btn-warning btn-sm">Edit</a>
-                            <a href="delete_student.php?id=<?= $row['id'] ?>" class="btn btn-danger btn-sm">Delete</a>
-                        </td>
-                    </tr>
-                <?php endwhile; ?>
-            </tbody>
-        </table>
-
-        <a href="add_student.php" class="button">Add Student</a>
     </div>
 </body>
 </html>

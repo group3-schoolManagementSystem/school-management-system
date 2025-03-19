@@ -3,23 +3,19 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-if (!isset($_SESSION["user_id"]) || $_SESSION["role"] != "teacher") {
+if (!isset($_SESSION["user_id"]) || $_SESSION["role"] != "admin") {
     header("Location: login.php");
     exit();
 }
 
 include("db.php");
 
-$teacher_id = $_SESSION["user_id"];
+// Fetch all students (no teacher restriction)
 $sql = "SELECT id, student_name, email, class, grade_level, dob, parent_contact_info 
-        FROM students WHERE added_by = ? AND is_deleted = 0";
+        FROM students WHERE is_deleted = 0";
 
-if ($stmt = $conn->prepare($sql)) {
-    $stmt->bind_param("i", $teacher_id);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $stmt->close();
-} else {
+$result = $conn->query($sql);
+if (!$result) {
     die("\u274c SQL Error: " . $conn->error);
 }
 
@@ -91,7 +87,7 @@ $conn->close();
             </tbody>
         </table>
         <a href="add_student.php" class="btn btn-maroon">Add Student</a>
-        <a href="teacher_dashboard.php" class="btn btn-secondary">Back to Dashboard</a>
+        <a href="admin_dashboard.php" class="btn btn-secondary">Back to Dashboard</a>
     </div>
 </body>
 </html>
