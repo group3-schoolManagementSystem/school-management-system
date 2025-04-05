@@ -1,74 +1,69 @@
-# School Management System
+# 🏫 School Management System
 
-This is a web application for managing school operations, including user roles, student and teacher management, class schedules, attendance tracking, grade reports, and email notifications.
+A dynamic web-based application that simplifies and automates school operations, including student and teacher management, attendance tracking, class scheduling, and academic performance reporting.
 
-## Table of Contents
+## 📖 Overview
 
-1. [Project Overview](#project-overview)
-2. [Features](#features)
-3. [Technologies Used](#technologies-used)
-4. [Installation](#installation)
-5. [Usage](#usage)
-6. [Contributors](#contributors)
-7. [License](#license)
+This School Management System is designed to help schools operate more efficiently by offering role-based access for administrators, teachers, and students. Built using core web technologies (PHP, MySQL, JavaScript, HTML, and CSS), it provides tools for managing students, teachers, classes, grades, and notifications — all from a central dashboard.
 
-## Project Overview
+## 🚀 Features
 
-The School Management System is a dynamic web application built to simplify and automate various school management processes. This project is developed using PHP, MySQL, JavaScript, HTML, and CSS.
+- 🔐 **Role-Based Access Control** – Admin, Teacher, and Student roles with customized dashboards  
+- 👩‍🎓 **Student Management** – Add, edit, and remove student profiles  
+- 👨‍🏫 **Teacher Management** – Assign subjects, manage teacher info  
+- 🗓 **Class Scheduling** – Timetable creation and class updates  
+- ✅ **Attendance System** – Track and manage daily attendance  
+- 📊 **Gradebook** – Enter and view student grades  
+- ✉️ **Email Notifications** – Notify parents or students about performance or school events
 
-## Features
+## 🧰 Tech Stack
 
-- **User Roles:** Role-based access for admins, teachers, and students.
-- **Student Management:** Register, update, and remove student profiles.
-- **Teacher Management:** Assign teachers to classes and subjects.
-- **Class Management:** Schedule and update class timetables.
-- **Attendance Tracking:** Mark and view attendance by class.
-- **Grade Reports:** Input and view grades for each student.
-- **Notifications:** Email notifications to parents about student performance or events.
+- **PHP** – Server-side scripting  
+- **MySQL** – Database management  
+- **HTML/CSS** – Frontend layout and styling  
+- **JavaScript** – Interactivity and validation  
+- **XAMPP/WAMP** – Local development environment
 
-## Technologies Used
+## 🛠️ Installation Guide
 
-- **PHP:** Server-side scripting.
-- **MySQL:** Database management.
-- **HTML/CSS:** Front-end design and layout.
-- **JavaScript:** Dynamic interactivity and form validation.
+### Prerequisites
+- XAMPP or WAMP installed
+- PHP 7.x or later
+- MySQL
 
-## Installation
+### Setup Instructions
 
-To install and set up the project locally, follow these steps:
-
-1. Clone the repository from GitHub:
+1. **Clone the Repository**
    ```bash
-Set up the database:
+   git clone https://github.com/group3-schoolManagementSystem/school-management-system.git
 
-Create a MySQL database 
+### 🛠️ Create the Database
 
-Import the database.sql file into the school_management database.
+Follow these steps to set up the database:
 
-Configure the database connection:
+1. Open **phpMyAdmin** using your local server (e.g., XAMPP or WAMP).
+2. Click on **"New"** to create a new database.
+3. Name the database: school_management
+4. Click on the newly created `school_management` database from the left sidebar.
+5. Navigate to the **Import** tab.
+6. Click **Choose File** and upload the SQL file:
+7. Click **Go** to import the structure and data.
 
-Open the config.php file and update the database credentials.
+> ✅ After importing, ensure your database tables are created successfully.
 
-Start the development server:
+2. **Configure the connection**
+ 
+-Open config/config.php
+-Update with your DB credentials
+-Start the project
 
-Use a local server environment like XAMPP or WAMP to run the project.
+**🤝 Contributors**
+Abraham – Abu-8835
 
-Usage
-Open your web browser and navigate to http://localhost/school-management-system.
+Melody – Melodykariuki
 
-Log in using the appropriate credentials (admin, teacher, or student).
+Francis Wales – wales31
 
-Use the various features to manage the school's operations.
-
-Contributors
-Abraham - Abu-8835
-
-Melody - Melodykariuki
-
-Francis - wales31
-
-James - Mahia-James
+James – Mahia-James
 
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
